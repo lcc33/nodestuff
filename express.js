@@ -1,29 +1,25 @@
 const express = require("express");
-const fs = require(`fs`);
+const fs = require("fs");
 const app = express();
 
-app.get(`/`, (req, res) => {
-  if (req.url === "/") {
-      fs.readFile("index.html", (err, data) => {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.end(data);
-      });
-    }else{
-      res.writeHead(404, { "Content-Type": "text/plain" });
-      res.end("404 - Not Found");
-    }
+app.get("/", (req, res) => {
+  fs.readFile("index.html", (err, data) => {
+    res.setHeader("Content-Type", "text/html");
+    res.send(data);
+  });
 });
 
-app.get(`/login.html`, (req, res) => {
-  if (req.url === `login.html`){
-    fs.readFile(`login.html`, (err, data) => {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end(data);
-    }
-  )}
-  else{
-    res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("404 - Not Found");
-  }
+app.get("/login.html", (req, res) => {
+  fs.readFile("login.html", (err, data) => {
+    res.setHeader("Content-Type", "text/html");
+    res.send(data);
+  });
 });
-app.get()
+
+app.use((req, res) => {
+  res.status(404).send("404 - Not Found");
+});
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
