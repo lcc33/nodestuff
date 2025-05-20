@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kindra Tech - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #f4f6fb;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 350px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2d6cdf;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    .input-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: #555;
+      font-size: 0.97rem;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #d1d5db;
+      border-radius: 5px;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .input-group input:focus {
+      border-color: #2d6cdf;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: #2d6cdf;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+    .login-btn:hover {
+      background: #1b4fa0;
+    }
+    .footer {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #888;
+    }
+    @media (max-width: 400px) {
+      .login-container {
+        width: 95vw;
+        padding: 1.5rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">Kindra Tech</div>
+    <h2>Login to your account</h2>
+    <form>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required autocomplete="username">
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="footer">
+      &copy; 2024 Kindra Tech. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
