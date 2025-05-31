@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/login.html", (req, res) => {
+app.get("/login", (req, res) => {
   fs.readFile("login.html", (err, data) => {
     res.setHeader("Content-Type", "text/html");
     res.send(data);
